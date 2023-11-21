@@ -1,0 +1,7 @@
+<!-- templates/player_list.html -->
+<h1>Player List</h1>
+<ul>
+    {% for player in players %}
+        <li>{{ player.name }} - {{ player.position }} - {{ player.age }}</li>
+    {% endfor %}
+</ul>

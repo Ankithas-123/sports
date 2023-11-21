@@ -1,0 +1,12 @@
+<!-- templates/team_list.html -->
+<h1>Team List</h1>
+<ul>
+    {% for team in teams %}
+        <li>{{ team.name }}</li>
+        <ul>
+            {% for player in team.players.all %}
+                <li>{{ player.name }} - {{ player.position }} - {{ player.age }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>

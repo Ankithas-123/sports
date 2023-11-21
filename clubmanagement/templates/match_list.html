@@ -1,0 +1,7 @@
+<!-- templates/match_list.html -->
+<h1>Match List</h1>
+<ul>
+    {% for match in matches %}
+        <li>{{ match }} - Result: {{ match.result|default:"Not available" }}</li>
+    {% endfor %}
+</ul>

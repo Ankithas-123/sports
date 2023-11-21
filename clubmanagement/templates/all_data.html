@@ -1,0 +1,28 @@
+<!-- templates/all_data.html -->
+<h1>All Data</h1>
+
+<h2>Players</h2>
+<ul>
+    {% for player in players %}
+        <li>{{ player.name }} - {{ player.position }} - {{ player.age }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Teams</h2>
+<ul>
+    {% for team in teams %}
+        <li>{{ team.name }}</li>
+        <ul>
+            {% for player in team.players.all %}
+                <li>{{ player.name }} - {{ player.position }} - {{ player.age }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>
+
+<h2>Matches</h2>
+<ul>
+    {% for match in matches %}
+        <li>{{ match }} - Result: {{ match.result|default:"Not available" }}</li>
+    {% endfor %}
+</ul>
